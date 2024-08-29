@@ -1,0 +1,202 @@
+we have a game in pyhton write the class templates by their methods and fields
+write each class in different partitions of code
+GAME
++ current_page :  Page 
++ 	+ run ()
++ initialization ()
+
+
+
+
+
+
+
+
+GameManagerPage	
++ image
+- last_event_handled_time
+- num_of_points:  Int
+- nums_babyTurtles:  Int	+ run_page ()
+- left_movement_handle ()
+- right_movement _handle ()
+- jump_movement_handle ()
+- space_handle ()
+- esc_handle ()
+- add_prize ()
+- add_baby_turtle ()
+-  
+
+1
+
+LoadingPage	
++ image
+	+ run_page ()
+render ()
+
+StartPage	
++ image	+ run_page ()
++ render ()
+- run_story_mode ()
+- run_options ()
+- run_help ()
+- run_quit ()
+
+BabyTurtle	
++ images:  List
+- direction_movement
+- pos_x:  Int
+- pos_y:  Int
+- row_num:  Int
+- col_num:  int	+ move ()
+- move_left ()
+- move_right ()
++ change_direction ()
++ portal_reached ()
++ add_baby_turtle_count ()
+
+OptionsPage	
++ image
+	+ run_page ()
++ render ()
+StoryPage	
++ images:  List	+ run_page ()
++ render ()
+GuidePage	
++ image	+ run_page () 
++ render ()
+PausePage	
++ image	+ run_page ()
+- run_continue ()
+- run_options ()
+- run_help ()
+- run_quit ()
++ render () 
+VictoryPage	
++ image	
++ run_page ()
++ render ()
+
+GameOverPage	
++ image
++ run_page ()
++ render ()
+
+Turtle
++ images:  List
+- pos_x:  Int
+- pos_y:  Int
+- row_num:  Int
+- col_num:  Int	- move_left ()
+- move_right ()
+- jump()
+- move_up ()
+- kick_enemy ()
+- sleep_mode ()
+
+Map
+- map_text_files  : List
+- maap_text_base:  Araay 2d
+- maap_tile_base:  Array 2d
+- level:  Int	- initiallize ()
++ find_tile_by_pos (x_pos, y_pos):  Tile
++ render_all ()
+
+<<Enemy>>	
+- pos_x:  Int
+- pos_y:  Int
+- row_num:  Int
+- col_num:  Int
+- health:  Int
+- kiled_reward ()	
++ move ():  void
++ got_hit () :  void
++ got_kick ():  void
++ hit_turtle ():  void
++ render ():  void
++  get_reward ()
+
+
+<<Prize>>	
+- point_prize  Int
+- pos_x :  Int
+- pos_y:  Int
+- row_num:  Int
+- col_num:  Int	+ got_hit ()
++ render ()
+
+<<OtherObject>>	
+- pos_x:  Int
+- pos_y:  Int
+- row_num:  Int
+- col_num:  Int	+ render ()
+
+
+
+
+
+
+
+
+
+
+AudioManger	
+- dict_music_type
+	+ play_music ()
++ play_sound ()
++ stop_music ()
++ mute_unmute_music ()
++ mute_unmute_sound ()
+1..*
+
+Tile	
++ image
+- row_num:  Int
+- col_num:  Int
+- object_in_place
+-type	
++ is_empty ()
++ place_obiect (object)
++render ()
+
+EnemyType2	
++ images:  List
+- pointer_of_image	+ move ()
++ got_hit () 
++ got_kick ()
++ hit_turtle ()
++ render ()
+
+EnemyType1	
++ images:  List
+-  pointer_of_image	+ move ()
++ got_hit () 
++ got_kick ()
++ hit_turtle ()
++ render ()
+
+
+PortableBlock	+ image	
+Thorn	+ image
+- damge 	+ hit () 
+
+BubbleTurtle	+ image	+ got_hit ()
+Ladder	+ image	
+Rope	+ image	
+
+VerticalBlock	
++ images:  List
+- activation 
+- pointer_image	+ get_activation ()
+
+Portal	
++ images:  List
+	
+Diamond
++ images:  List
+- pointer_of_image	+ got_hit ()
++ render ()
+
+Star	
++ image:  List
+- pointer_of_image	+ got_hit ()
++ render ()
